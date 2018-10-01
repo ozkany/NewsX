@@ -1,0 +1,46 @@
+<!-- Modal -->
+<div class="modal fade-scale bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" style="width:auto;height:auto" role="document">
+    <div class="modal-content" style="width:auto;height:auto">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">
+          <h2>{{ newsItem.title }}</h2> ( {{ newsItem.channel }} )
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <img class="w-100" src="{{ newsItem.detail.img.url }}"> -->
+        <div class="col-sm-12 text-center" *ngIf="isNoImageIn(newsItem)">
+          <img class="center-block" width="{{ newsItem.detail.img.width }}" height="{{newsItem.detail.img.height }}"
+            src="{{ newsItem.detail.img.url }}">
+        </div>
+
+        <div *ngFor="let content of newsItem.detail.contents">
+
+          <h3 *ngIf="content.entity == 2">{{ content.text }}</h3>
+          <p *ngIf="content.entity == 3">{{ content.text }}</p>
+
+          <div class="col-sm-12 text-center" *ngIf="content.entity == 4">
+            <img class="center-block" width="{{ content.width }}" height="{{ content.height }}" src="{{ content.url }}">
+          </div>
+
+          <div *ngIf="content.entity == 5" class="col-sm-12 text-center">
+            <video controls>
+              <source src="{{ content.url }}" type="video/mp4">
+              <source src="movie.ogg" type="video/ogg">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <a href="{{ newsItem.url }}" target="blank" class="btn btn-secondary">Kaynağa Git</a>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Kapat</button>
+      </div>
+    </div>
+  </div>
+</div>

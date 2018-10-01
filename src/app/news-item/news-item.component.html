@@ -8,15 +8,22 @@
       <strong class="d-inline-block mb-2 text-primary">{{ newsItem.channel }}</strong>
       <h5 class="mb-0">
         <a class="text-dark" 
-          href="{{ newsItem.url  }}" 
+          href="#"
+          data-toggle="modal" 
+          data-target="#exampleModalCenter"
           (click)="onSelected()">{{ newsItem.title }}</a>
       </h5>
-      <p class="card-text mb-auto mt-2">{{ newsItem.detail.description.substring(0,100) + "..." }}</p>
+      <p class="card-text mb-auto mt-2">
+        {{ 
+          newsItem.detail.description?.length>100 ?
+          newsItem.detail.description.substring(0,100) + "..." :
+          newsItem.detail.description
+        }}</p>
     </div>
     <img class="card-img-right flex-auto d-none d-lg-block" style="max-width:250px; max-height:250px;" src="{{ newsItem.imgurl }}" alt="">
   </div>
 </div>
 
 
-
+<!-- href="{{ newsItem.url  }}"  -->
 <!-- </div> -->

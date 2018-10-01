@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   constructor(private newsService: NewsService) { }
 
   ngOnInit() {
-    this.carouselNewsItems = this.newsService.getNewsListData().slice(0,4);
+    this.carouselNewsItems = this.newsService.getNewsListData().slice(0,6);
   }
 
 }

@@ -17,6 +17,7 @@ export class NewsItemComponent implements OnInit {
 
   onSelected() {
     console.log('onselected in NewsItemComponent');
+    console.log(this.newsItem);
     this.newsService.newsSelected.emit(this.newsItem);
   }
 

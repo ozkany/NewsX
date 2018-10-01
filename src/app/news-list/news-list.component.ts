@@ -13,7 +13,7 @@ export class NewsListComponent implements OnInit {
   constructor(private newsService: NewsService) { }
 
   ngOnInit() {
-    this.newsItemList = this.newsService.getNewsListData().slice(4);
+    this.newsItemList = this.newsService.getNewsListData().slice(6);
 
     this.newsService.selectedNewsListChanged.subscribe(
       (newsList: NewsItem[]) => {
