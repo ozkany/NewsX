@@ -9,23 +9,56 @@ import { NewsItem } from '../shared/news.model';
 })
 export class NewsListComponent implements OnInit {
   newsItemList: NewsItem[];
-  
-  constructor(private newsService: NewsService) { }
+  top2NewsData: NewsItem[];
+  recentNewsData: NewsItem[];
+  generalNewsData: NewsItem[];
+  mostReadNewsData: NewsItem[];
+  featuredNewsData: NewsItem[];
+  bottom2NewsData: NewsItem[];
+  mostReadBottomNewsData: NewsItem[];
+  featuredBottomNewsData: NewsItem[];
+
+  constructor(private newsService: NewsService) {
+
+  }
+
+  onNewsSelected(selectedNews: NewsItem) {
+    console.log(selectedNews);
+    this.newsService.newsSelected.emit(selectedNews);
+  }
 
   ngOnInit() {
-    this.newsItemList = this.newsService.getNewsListData().slice(6);
+    this.getAllNewsData();
 
-    this.newsService.selectedNewsListChanged.subscribe(
-      (newsList: NewsItem[]) => {
-        console.log('selectedNewsListChanged.subscribe in NewsListComponent');
-        console.log(newsList);
-    });
+    // console.log(this.newsList);
+    this.newsService.newsSelected.subscribe(
+      (news: NewsItem) => {
+        console.log('newsSelected.subscribe in AppComponent');
+        this.newsService.setNewSelectedNews(news);
+      }
+    )
 
     this.newsService.newsCategoryChanged.subscribe(
       (categoryId: number) => {
-        console.log('his.newsService.newsCategoryChanged.subscribe : ' + categoryId);
-        this.newsItemList = this.newsService.getNewsListData().filter(n=> n.category==categoryId);
+        console.log('root.newsCategoryChanged.subscribe : ' + categoryId);
+        this.newsService.categoryId = categoryId;
+        this.getAllNewsData();
+        console.log(this.top2NewsData);
     });
   }
+
+  getAllNewsData() {
+    this.newsItemList = this.newsService.getNewsListData();
+    this.top2NewsData = this.newsService.getTop2NewsData();
+    this.recentNewsData = this.newsService.getRecentNewsData();
+    this.mostReadNewsData = this.newsService.getMostReadNewsData();
+    this.generalNewsData = this.newsService.getGeneralNewsData();
+    this.featuredNewsData = this.newsService.getFeaturedNewsData();
+    this.bottom2NewsData = this.newsService.getBottom2NewsData();
+    this.featuredBottomNewsData = this.newsService.getFeaturedBottomNewsData();
+    this.mostReadBottomNewsData = this.newsService.getMostReadBottomNewsData();
+    console.log("news-list-component -> getAllNewsData finished");
+  }
+  
 
 }

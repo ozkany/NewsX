@@ -17,4 +17,9 @@ export class HeaderComponent implements OnInit {
     this.carouselNewsItems = this.newsService.getNewsListData().slice(0,6);
   }
 
+  onCategoryClicked(categoryId: number) {
+    console.log('header-onCategoryClicked-' + categoryId);
+    this.newsService.newsCategoryChanged.emit(categoryId);
+  }
+
 }

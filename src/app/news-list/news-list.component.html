@@ -1,60 +1,606 @@
-<div class="row mb-2">
 
-<app-news-item 
-  class="col-md-6"
-  style="max-width: 100%; padding-right: 0px; padding-left: 0px;"
-  *ngFor="let newsItem of newsItemList"
-  [newsItem] = newsItem
-></app-news-item>
+<div class="section">
+    <!-- container -->
+    <div class="container">
+      <!-- row -->
+      <!-- TOP 2 NEWS - BEGIN -->
+      <div class="row">	
+        <!-- post -->
+        <!-- <app-news-item [newsItem]=top2NewsData[0] class="col-md"></app-news-item> -->
+        
+        
+        <div class="col-md-6">
+          <div class="post post-thumb">
+            <a class="post-img" [routerLink]="['/haber', top2NewsData[0].detail.id]"><img src="{{ top2NewsData[0].imgurl }}" alt=""></a>
+            <div class="post-body">
+              <div class="post-meta">
+                <a class="post-category cat-2" [routerLink]="['/kaynak',top2NewsData[0].channel]">{{ top2NewsData[0].channel }}</a>
+                <span class="post-date">{{ top2NewsData[0].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+              </div>
+              <h3 class="post-title"><a [routerLink]="['/haber', top2NewsData[0].detail.id]" (click)="onNewsSelected(top2NewsData[0])">{{ top2NewsData[0].title }}</a></h3>
+              <!-- routerLink="/haber/{{top2NewsData[0].detail.id}}"  -->
+            </div>
+          </div>
+        </div> 
+        <!-- /post -->
 
-</div>
-
-<!-- <div class="row mb-2">
-  <div class="col-md-6" *ngFor="let news of newsList">
-    <div class="card flex-md-row mb-4 shadow-sm h-md-250">
-      <div class="card-body d-flex flex-column align-items-start">
-        <strong class="d-inline-block mb-2 text-primary">{{ news.channel }}</strong>
-        <h4 class="mb-0">
-          <a class="text-dark" href="{{ news.url }}">{{ news.title }}</a>
-        </h4>
-        -- <div class="mb-1 text-muted">Nov 12</div> --
-        <p class="card-text mb-auto mt-2">{{ news.detail.description.substring(0,80) + "..."  }}</p>
-        -- <a href="#">Haberin devamı</a> --
+        <!-- post -->
+        <div class="col-md-6">
+          <div class="post post-thumb">
+            <a class="post-img" [routerLink]="['/haber', top2NewsData[1].detail.id]"><img src="{{ top2NewsData[1].imgurl }}" alt=""></a>
+            <div class="post-body">
+              <div class="post-meta">
+                <a class="post-category cat-3" [routerLink]="['/kaynak',top2NewsData[1].channel]">{{ top2NewsData[1].channel }}</a>
+                <span class="post-date">{{ top2NewsData[1].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+              </div>
+              <h3 class="post-title"><a [routerLink]="['/haber', top2NewsData[1].detail.id]">{{ top2NewsData[1].title }}</a></h3>
+            </div>
+          </div>
+        </div>
+        <!-- /post -->
       </div>
-      <img class="card-img-right flex-auto d-none d-lg-block" style="max-width:250px; max-height:250px;" src="{{ news.imgurl }}" alt="">
-    </div>
-  </div>
-</div> -->
+      <!-- /row -->
+      <!-- TOP 2 NEWS - END -->
 
+      <!-- RECENT NEWS - BEGIN -->
+      <!-- row -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title">
+            <h2>Son Haberler</h2>
+          </div>
+        </div>
 
+        <!-- post -->
+        <div class="col-md-4">
+          <div class="post">
+            <a class="post-img" [routerLink]="['/haber', recentNewsData[0].detail.id]"><img src="{{ recentNewsData[0].imgurl }}" alt=""></a>
+            <div class="post-body">
+              <div class="post-meta">
+                <a class="post-category cat-1" [routerLink]="['/kaynak',recentNewsData[0].channel]">{{ recentNewsData[0].channel }}</a>
+                <span class="post-date">{{ recentNewsData[0].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+              </div>
+              <h3 class="post-title"><a [routerLink]="['/haber', recentNewsData[0].detail.id]">{{ recentNewsData[0].title }}</a></h3>
+            </div>
+          </div>
+        </div>
+        <!-- /post -->
 
-<!-- <div class="row mb-2">
-  <div class="col-md-6">
-    <div class="card flex-md-row mb-4 shadow-sm h-md-250">
-      <div class="card-body d-flex flex-column align-items-start">
-        <strong class="d-inline-block mb-2 text-primary">{{ newsList[6].channel }}</strong>
-        <h4 class="mb-0">
-          <a class="text-dark" href="#">{{ newsList[6].title }}</a>
-        </h4>
-        <div class="mb-1 text-muted">Nov 12</div>
-        <p class="card-text mb-auto mt-2">{{ newsList[6].detail.description.substring(0,80) + "..."  }}</p>
-        <a href="#">Haberin devamı</a>
+        <!-- post -->
+        <div class="col-md-4">
+          <div class="post">
+            <a class="post-img" [routerLink]="['/haber', recentNewsData[1].detail.id]"><img src="{{ recentNewsData[1].imgurl }}" alt=""></a>
+            <div class="post-body">
+              <div class="post-meta">
+                <a class="post-category cat-2" [routerLink]="['/kaynak',recentNewsData[1].channel]">{{ recentNewsData[1].channel }}</a>
+                <span class="post-date">{{ recentNewsData[1].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+              </div>
+              <h3 class="post-title"><a [routerLink]="['/haber', recentNewsData[1].detail.id]">{{ recentNewsData[1].title }}</a></h3>
+            </div>
+          </div>
+        </div>
+        <!-- /post -->
+
+        <!-- post -->
+        <div class="col-md-4">
+          <div class="post">
+            <a class="post-img" [routerLink]="['/haber', recentNewsData[2].detail.id]"><img src="{{ recentNewsData[2].imgurl }}" alt=""></a>
+            <div class="post-body">
+              <div class="post-meta">
+                <a class="post-category cat-3" [routerLink]="['/kaynak',recentNewsData[2].channel]">{{ recentNewsData[2].channel }}</a>
+                <span class="post-date">{{ recentNewsData[2].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+              </div>
+              <h3 class="post-title"><a [routerLink]="['/haber', recentNewsData[2].detail.id]">{{ recentNewsData[2].title }}</a></h3>
+            </div>
+          </div>
+        </div>
+        <!-- /post -->
+
+        <div class="clearfix visible-md visible-lg"></div>
+
+        <!-- post -->
+        <div class="col-md-4">
+          <div class="post">
+            <a class="post-img" [routerLink]="['/haber', recentNewsData[3].detail.id]"><img src="{{ recentNewsData[3].imgurl }}" alt=""></a>
+            <div class="post-body">
+              <div class="post-meta">
+                <a class="post-category cat-2" [routerLink]="['/kaynak',recentNewsData[3].channel]">{{ recentNewsData[3].channel }}</a>
+                <span class="post-date">{{ recentNewsData[3].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+              </div>
+              <h3 class="post-title"><a [routerLink]="['/haber', recentNewsData[3].detail.id]">{{ recentNewsData[3].title }}</a></h3>
+            </div>
+          </div>
+        </div>
+        <!-- /post -->
+
+        <!-- post -->
+        <div class="col-md-4">
+          <div class="post">
+            <a class="post-img" [routerLink]="['/haber', recentNewsData[4].detail.id]"><img src="{{ recentNewsData[4].imgurl }}" alt=""></a>
+            <div class="post-body">
+              <div class="post-meta">
+                <a class="post-category cat-4" [routerLink]="['/kaynak',recentNewsData[4].channel]">{{ recentNewsData[4].channel }}</a>
+                <span class="post-date">{{ recentNewsData[4].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+              </div>
+              <h3 class="post-title"><a [routerLink]="['/haber', recentNewsData[4].detail.id]">{{ recentNewsData[4].title }}</a></h3>
+            </div>
+          </div>
+        </div>
+        <!-- /post -->
+
+        <!-- post -->
+        <div class="col-md-4">
+          <div class="post">
+            <a class="post-img" [routerLink]="['/haber', recentNewsData[5].detail.id]"><img src="{{ recentNewsData[5].imgurl }}" alt=""></a>
+            <div class="post-body">
+              <div class="post-meta">
+                <a class="post-category cat-1" [routerLink]="['/kaynak',recentNewsData[5].channel]">{{ recentNewsData[5].channel }}</a>
+                <span class="post-date">{{ recentNewsData[5].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+              </div>
+              <h3 class="post-title"><a [routerLink]="['/haber', recentNewsData[5].detail.id]">{{ recentNewsData[5].title }}</a></h3>
+            </div>
+          </div>
+        </div>
+        <!-- /post -->
       </div>
-      <img class="card-img-right flex-auto d-none d-lg-block" style="max-width:250px; max-height:250px;" src="{{ newsList[6].imgurl }}" alt="">
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="card flex-md-row mb-4 shadow-sm h-md-250">
-      <div class="card-body d-flex flex-column align-items-start">
-        <strong class="d-inline-block mb-2 text-primary">{{ newsList[7].channel }}</strong>
-        <h4 class="mb-0">
-          <a class="text-dark" href="#">{{ newsList[7].title }}</a>
-        </h4>
-        <div class="mb-1 text-muted">Nov 12</div>
-        <p class="card-text mb-auto mt-2">{{ newsList[7].detail.description.substring(0,80) + "..."  }}</p>
-        <a href="#">Haberin devamı</a>
+      <!-- /row -->
+      <!-- RECENT NEWS - END -->
+
+
+      <!-- GENERAL NEWS - BEGIN -->
+      <!-- row -->
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row">
+            <!-- post -->
+            <div class="col-md-12">
+              <div class="post post-thumb">
+                <a class="post-img" [routerLink]="['/haber', generalNewsData[0].detail.id]"><img src="{{ generalNewsData[0].imgurl }}" alt=""></a>
+                <div class="post-body">
+                  <div class="post-meta">
+                    <a class="post-category cat-3" [routerLink]="['/kaynak',generalNewsData[0].channel]">{{ generalNewsData[0].channel }}</a>
+                    <span class="post-date">{{ generalNewsData[0].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+                  </div>
+                  <h3 class="post-title"><a [routerLink]="['/haber', generalNewsData[0].detail.id]">{{ generalNewsData[0].title }}</a></h3>
+                </div>
+              </div>
+            </div>
+            <!-- /post -->
+
+            <!-- post -->
+            <div class="col-md-6">
+              <div class="post">
+                <a class="post-img" [routerLink]="['/haber', generalNewsData[1].detail.id]"><img src="{{ generalNewsData[1].imgurl }}" alt=""></a>
+                <div class="post-body">
+                  <div class="post-meta">
+                    <a class="post-category cat-4" [routerLink]="['/kaynak',generalNewsData[1].channel]">{{ generalNewsData[1].channel }}</a>
+                    <span class="post-date">{{ generalNewsData[1].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+                  </div>
+                  <h3 class="post-title"><a [routerLink]="['/haber', generalNewsData[1].detail.id]">{{ generalNewsData[1].title }}</a></h3>
+                </div>
+              </div>
+            </div>
+            <!-- /post -->
+
+            <!-- post -->
+            <div class="col-md-6">
+              <div class="post">
+                <a class="post-img" [routerLink]="['/haber', generalNewsData[2].detail.id]"><img src="{{ generalNewsData[2].imgurl }}" alt=""></a>
+                <div class="post-body">
+                  <div class="post-meta">
+                    <a class="post-category cat-1" [routerLink]="['/kaynak',generalNewsData[2].channel]">{{ generalNewsData[2].channel }}</a>
+                    <span class="post-date">{{ generalNewsData[2].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+                  </div>
+                  <h3 class="post-title"><a [routerLink]="['/haber', generalNewsData[2].detail.id]">{{ generalNewsData[2].title }}</a></h3>
+                </div>
+              </div>
+            </div>
+            <!-- /post -->
+
+            <div class="clearfix visible-md visible-lg"></div>
+
+            <!-- post -->
+            <div class="col-md-6">
+              <div class="post">
+                <a class="post-img" [routerLink]="['/haber', generalNewsData[3].detail.id]"><img src="{{ generalNewsData[3].imgurl }}" alt=""></a>
+                <div class="post-body">
+                  <div class="post-meta">
+                    <a class="post-category cat-2" [routerLink]="['/kaynak',generalNewsData[3].channel]">{{ generalNewsData[3].channel }}</a>
+                    <span class="post-date">{{ generalNewsData[3].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+                  </div>
+                  <h3 class="post-title"><a [routerLink]="['/haber', generalNewsData[3].detail.id]">{{ generalNewsData[3].title }}</a></h3>
+                </div>
+              </div>
+            </div>
+            <!-- /post -->
+
+            <!-- post -->
+            <div class="col-md-6">
+              <div class="post">
+                <a class="post-img" [routerLink]="['/haber', generalNewsData[4].detail.id]"><img src="{{ generalNewsData[4].imgurl }}" alt=""></a>
+                <div class="post-body">
+                  <div class="post-meta">
+                    <a class="post-category cat-3" [routerLink]="['/kaynak',generalNewsData[4].channel]">{{ generalNewsData[4].channel }}</a>
+                    <span class="post-date">{{ generalNewsData[4].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+                  </div>
+                  <h3 class="post-title"><a [routerLink]="['/haber', generalNewsData[4].detail.id]">{{ generalNewsData[4].title }}</a></h3>
+                </div>
+              </div>
+            </div>
+            <!-- /post -->
+
+            <div class="clearfix visible-md visible-lg"></div>
+
+            <!-- post -->
+            <div class="col-md-6">
+              <div class="post">
+                <a class="post-img" [routerLink]="['/haber', generalNewsData[5].detail.id]"><img src="{{ generalNewsData[5].imgurl }}" alt=""></a>
+                <div class="post-body">
+                  <div class="post-meta">
+                    <a class="post-category cat-1" [routerLink]="['/kaynak',generalNewsData[5].channel]">{{ generalNewsData[5].channel }}</a>
+                    <span class="post-date">{{ generalNewsData[5].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+                  </div>
+                  <h3 class="post-title"><a [routerLink]="['/haber', generalNewsData[5].detail.id]">{{ generalNewsData[5].title }}</a></h3>
+                </div>
+              </div>
+            </div>
+            <!-- /post -->
+
+            <!-- post -->
+            <div class="col-md-6">
+              <div class="post">
+                <a class="post-img" [routerLink]="['/haber', generalNewsData[6].detail.id]"><img src="{{ generalNewsData[6].imgurl }}" alt=""></a>
+                <div class="post-body">
+                  <div class="post-meta">
+                    <a class="post-category cat-2" [routerLink]="['/kaynak',generalNewsData[6].channel]">{{ generalNewsData[6].channel }}</a>
+                    <span class="post-date">{{ generalNewsData[6].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+                  </div>
+                  <h3 class="post-title"><a [routerLink]="['/haber', generalNewsData[6].detail.id]">{{ generalNewsData[6].title }}</a></h3>
+                </div>
+              </div>
+            </div>
+            <!-- /post -->
+          </div>
+        </div>
+        <!-- GENERAL NEWS - END -->
+
+        <!-- MOST READ NEWS - BEGIN -->
+        <div class="col-md-4">
+          <!-- post widget -->
+          <div class="aside-widget">
+            <div class="section-title">
+              <h2>Çok Okunanlar</h2>
+            </div>
+
+            <div class="post post-widget">
+              <a class="post-img" [routerLink]="['/haber', mostReadNewsData[0].detail.id]"><img src="{{ mostReadNewsData[0].imgurl }}" alt=""></a>
+              <div class="post-body">
+                <h3 class="post-title"><a [routerLink]="['/haber', mostReadNewsData[0].detail.id]">{{ mostReadNewsData[0].title }}</a></h3>
+              </div>
+            </div>
+
+            <div class="post post-widget">
+              <a class="post-img" [routerLink]="['/haber', mostReadNewsData[1].detail.id]"><img src="{{ mostReadNewsData[1].imgurl }}" alt=""></a>
+              <div class="post-body">
+                <h3 class="post-title"><a [routerLink]="['/haber', mostReadNewsData[1].detail.id]">{{ mostReadNewsData[1].title }}</a></h3>
+              </div>
+            </div>
+
+            <div class="post post-widget">
+              <a class="post-img" [routerLink]="['/haber', mostReadNewsData[2].detail.id]"><img src="{{ mostReadNewsData[2].imgurl }}" alt=""></a>
+              <div class="post-body">
+                <h3 class="post-title"><a [routerLink]="['/haber', mostReadNewsData[2].detail.id]">{{ mostReadNewsData[2].title }}</a></h3>
+              </div>
+            </div>
+
+            <div class="post post-widget">
+              <a class="post-img" [routerLink]="['/haber', mostReadNewsData[3].detail.id]"><img src="{{ mostReadNewsData[3].imgurl }}" alt=""></a>
+              <div class="post-body">
+                <h3 class="post-title"><a [routerLink]="['/haber', mostReadNewsData[3].detail.id]">{{ mostReadNewsData[3].title }}</a></h3>
+              </div>
+            </div>
+          </div>
+          <!-- /post widget -->
+          <!-- MOST READ NEWS - END -->
+
+
+          <!-- FEATURED NEWS - BEGIN -->
+          <!-- post widget -->
+          <div class="aside-widget">
+            <div class="section-title">
+              <h2>Öne Çıkanlar</h2>
+            </div>
+            <div class="post post-thumb">
+              <a class="post-img" [routerLink]="['/haber', featuredNewsData[0].detail.id]"><img src="{{ featuredNewsData[0].imgurl }}" alt=""></a>
+              <div class="post-body">
+                <div class="post-meta">
+                  <a class="post-category cat-3" [routerLink]="['/kaynak',featuredNewsData[0].channel]">{{ featuredNewsData[0].channel }}</a>
+                  <span class="post-date">{{ featuredNewsData[0].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+                </div>
+                <h3 class="post-title"><a [routerLink]="['/haber', featuredNewsData[0].detail.id]">{{ featuredNewsData[0].title }}</a></h3>
+              </div>
+            </div>
+
+            <div class="post post-thumb">
+              <a class="post-img" [routerLink]="['/haber', featuredNewsData[1].detail.id]"><img src="{{ featuredNewsData[1].imgurl }}" alt=""></a>
+              <div class="post-body">
+                <div class="post-meta">
+                  <a class="post-category cat-2" [routerLink]="['/kaynak',featuredNewsData[1].channel]">{{ featuredNewsData[1].channel }}</a>
+                  <span class="post-date">{{ featuredNewsData[1].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+                </div>
+                <h3 class="post-title"><a [routerLink]="['/haber', featuredNewsData[1].detail.id]">{{ featuredNewsData[1].title }}</a></h3>
+              </div>
+            </div>
+          </div>
+          <!-- /post widget -->
+          <!-- FEATURED NEWS - END -->
+
+          
+          <!-- ad -->
+          <div class="aside-widget text-center">
+            <a href="" style="display: inline-block;margin: auto;">
+              <img class="img-responsive" src="https://source.unsplash.com/random/300x250" alt="">
+            </a>
+            <br/>
+            Reklam
+          </div>
+          <!-- /ad -->
+        </div>
       </div>
-      <img class="card-img-right flex-auto d-none d-lg-block" style="max-width:250px; max-height:250px;" src="{{ newsList[7].imgurl }}" alt="">
+      <!-- /row -->
     </div>
+    <!-- /container -->
   </div>
-</div> -->
+
+
+
+
+
+<!-- BOTTOM 2 NEWS - BEGIN -->
+  <div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">	
+					<!-- post -->
+					<div class="col-md-6">
+						<div class="post post-thumb">
+							<a class="post-img" [routerLink]="['/haber', bottom2NewsData[0].detail.id]"><img src="{{ bottom2NewsData[0].imgurl }}" alt=""></a>
+							<div class="post-body">
+								<div class="post-meta">
+									<a class="post-category cat-2" [routerLink]="['/kaynak',bottom2NewsData[0].channel]">{{ bottom2NewsData[0].channel }}</a>
+									<span class="post-date">{{ bottom2NewsData[0].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+								</div>
+								<h3 class="post-title"><a [routerLink]="['/haber', bottom2NewsData[0].detail.id]">{{ bottom2NewsData[0].title }}</a></h3>
+							</div>
+						</div>
+					</div>
+					<!-- /post -->
+
+					<!-- post -->
+					<div class="col-md-6">
+						<div class="post post-thumb">
+							<a class="post-img" [routerLink]="['/haber', bottom2NewsData[1].detail.id]"><img src="{{ bottom2NewsData[1].imgurl }}" alt=""></a>
+							<div class="post-body">
+								<div class="post-meta">
+									<a class="post-category cat-3" [routerLink]="['/kaynak',bottom2NewsData[1].channel]">{{ bottom2NewsData[1].channel }}</a>
+									<span class="post-date">{{ bottom2NewsData[1].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+								</div>
+								<h3 class="post-title"><a [routerLink]="['/haber', bottom2NewsData[1].detail.id]">{{ bottom2NewsData[1].title }}</a></h3>
+							</div>
+						</div>
+					</div>
+					<!-- /post -->
+				</div>
+				<!-- /row -->
+
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /section -->
+    <!-- BOTTOM 2 NEWS - END -->
+    
+
+<!-- FEATURED BOTTOM NEWS - BEGIN -->
+		<!-- section -->
+		<div class="section section-grey">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="section-title text-center">
+							<h2>Öne Çıkanlar</h2>
+						</div>
+					</div>
+
+					<!-- post -->
+					<div class="col-md-4">
+						<div class="post">
+							<a class="post-img" [routerLink]="['/haber', featuredBottomNewsData[0].detail.id]"><img src="{{ featuredBottomNewsData[0].imgurl }}" alt=""></a>
+							<div class="post-body">
+								<div class="post-meta">
+									<a class="post-category cat-2" [routerLink]="['/kaynak',featuredBottomNewsData[0].channel]">{{ featuredBottomNewsData[0].channel }}</a>
+									<span class="post-date">{{ featuredBottomNewsData[0].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+								</div>
+								<h3 class="post-title"><a [routerLink]="['/haber', featuredBottomNewsData[0].detail.id]">{{ featuredBottomNewsData[0].title }}</a></h3>
+							</div>
+						</div>
+					</div>
+					<!-- /post -->
+
+					<!-- post -->
+					<div class="col-md-4">
+						<div class="post">
+							<a class="post-img" [routerLink]="['/haber', featuredBottomNewsData[1].detail.id]"><img src="{{ featuredBottomNewsData[1].imgurl }}" alt=""></a>
+							<div class="post-body">
+								<div class="post-meta">
+									<a class="post-category cat-3" [routerLink]="['/kaynak',featuredBottomNewsData[1].channel]">{{ featuredBottomNewsData[1].channel }}</a>
+									<span class="post-date">{{ featuredBottomNewsData[1].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+								</div>
+								<h3 class="post-title"><a [routerLink]="['/haber', featuredBottomNewsData[1].detail.id]">{{ featuredBottomNewsData[1].title }}</a></h3>
+							</div>
+						</div>
+					</div>
+					<!-- /post -->
+
+					<!-- post -->
+					<div class="col-md-4">
+						<div class="post">
+							<a class="post-img" [routerLink]="['/haber', featuredBottomNewsData[2].detail.id]"><img src="{{ featuredBottomNewsData[2].imgurl }}" alt=""></a>
+							<div class="post-body">
+								<div class="post-meta">
+									<a class="post-category cat-1" [routerLink]="['/kaynak',featuredBottomNewsData[2].channel]">{{ featuredBottomNewsData[2].channel }}</a>
+									<span class="post-date">{{ featuredBottomNewsData[2].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+								</div>
+								<h3 class="post-title"><a [routerLink]="['/haber', featuredBottomNewsData[2].detail.id]">{{ featuredBottomNewsData[2].title }}</a></h3>
+							</div>
+						</div>
+					</div>
+					<!-- /post -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+    <!-- /section -->
+    <!-- FEATURED BOTTOM NEWS - END -->
+
+
+
+<!-- MOST READ BOTTOM NEWS - BEGIN -->
+		<!-- section -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-8">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="section-title">
+									<h2>Çok Okunanlar</h2>
+								</div>
+							</div>
+							<!-- post -->
+							<div class="col-md-12">
+								<div class="post post-row">
+									<a class="post-img" [routerLink]="['/haber', mostReadBottomNewsData[0].detail.id]"><img src="{{ mostReadBottomNewsData[0].imgurl }}" alt=""></a>
+									<div class="post-body">
+										<div class="post-meta">
+											<a class="post-category cat-2" [routerLink]="['/kaynak',mostReadBottomNewsData[0].channel]">{{ mostReadBottomNewsData[0].channel }}</a>
+											<span class="post-date">{{ mostReadBottomNewsData[0].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+										</div>
+										<h3 class="post-title"><a [routerLink]="['/haber', mostReadBottomNewsData[0].detail.id]">{{ mostReadBottomNewsData[0].title }}</a></h3>
+										<p>{{ mostReadBottomNewsData[0].detail.description }}</p>
+									</div>
+								</div>
+							</div>
+							<!-- /post -->
+
+							<!-- post -->
+							<div class="col-md-12">
+								<div class="post post-row">
+									<a class="post-img" [routerLink]="['/haber', mostReadBottomNewsData[1].detail.id]"><img src="{{ mostReadBottomNewsData[1].imgurl }}" alt=""></a>
+									<div class="post-body">
+										<div class="post-meta">
+											<a class="post-category cat-2" [routerLink]="['/kaynak',mostReadBottomNewsData[1].channel]">{{ mostReadBottomNewsData[1].channel }}</a>
+											<span class="post-date">{{ mostReadBottomNewsData[1].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+										</div>
+										<h3 class="post-title"><a [routerLink]="['/haber', mostReadBottomNewsData[1].detail.id]">{{ mostReadBottomNewsData[1].title }}</a></h3>
+										<p>{{ mostReadBottomNewsData[1].detail.description }}</p>
+									</div>
+								</div>
+							</div>
+							<!-- /post -->
+
+							<!-- post -->
+							<div class="col-md-12">
+								<div class="post post-row">
+									<a class="post-img" [routerLink]="['/haber', mostReadBottomNewsData[2].detail.id]"><img src="{{ mostReadBottomNewsData[2].imgurl }}" alt=""></a>
+									<div class="post-body">
+										<div class="post-meta">
+											<a class="post-category cat-4" [routerLink]="['/kaynak',mostReadBottomNewsData[2].channel]">{{ mostReadBottomNewsData[2].channel }}</a>
+											<span class="post-date">{{ mostReadBottomNewsData[2].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+										</div>
+										<h3 class="post-title"><a [routerLink]="['/haber', mostReadBottomNewsData[2].detail.id]">{{ mostReadBottomNewsData[2].title }}</a></h3>
+										<p>{{ mostReadBottomNewsData[2].detail.description }}</p>
+									</div>
+								</div>
+							</div>
+							<!-- /post -->
+							
+							<!-- post -->
+							<div class="col-md-12">
+								<div class="post post-row">
+									<a class="post-img" [routerLink]="['/haber', mostReadBottomNewsData[3].detail.id]"><img src="{{ mostReadBottomNewsData[3].imgurl }}" alt=""></a>
+									<div class="post-body">
+										<div class="post-meta">
+											<a class="post-category cat-3" [routerLink]="['/kaynak',mostReadBottomNewsData[3].channel]">{{ mostReadBottomNewsData[3].channel }}</a>
+											<span class="post-date">{{ mostReadBottomNewsData[3].detail.publishDateTime | date: 'dd/MM/yyyy HH:mm' }}</span>
+										</div>
+										<h3 class="post-title"><a [routerLink]="['/haber', mostReadBottomNewsData[3].detail.id]">{{ mostReadBottomNewsData[3].title }}</a></h3>
+										<p>{{ mostReadBottomNewsData[3].detail.description }}</p>
+									</div>
+								</div>
+							</div>
+							<!-- /post -->
+							
+							<!-- <div class="col-md-12">
+								<div class="section-row">
+									<button class="primary-button center-block">Load More</button>
+								</div>
+							</div> -->
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<!-- ad -->
+						<div class="aside-widget text-center">
+							<a href="" style="display: inline-block;margin: auto;">
+                <img class="img-responsive" src="https://source.unsplash.com/random/300x250" alt=""> <br/>
+                Reklam
+							</a>
+						</div>
+						<!-- /ad -->
+						
+						<!-- catagories -->
+						<div class="aside-widget">
+							<div class="section-title">
+								<h2>Kategoriler</h2>
+							</div>
+							<div class="category-widget">
+								<ul>
+									<li><a href="" class="cat-1">Gündem<span>340</span></a></li>
+									<li><a href="" class="cat-2">Magazin<span>74</span></a></li>
+									<li><a href="" class="cat-4">Siyaset<span>41</span></a></li>
+									<li><a href="" class="cat-3">Spor<span>35</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /catagories -->
+						
+						<!-- tags -->
+						<div class="aside-widget">
+							<div class="tags-widget">
+								<ul>
+									<li><a href="">Türkiye</a></li>
+									<li><a href="">Futbol</a></li>
+									<li><a href="">Amerika</a></li>
+									<li><a href="">İstanbul</a></li>
+									<li><a href="">Hava Durumu</a></li>
+									<li><a href="">Yemek</a></li>
+									<li><a href="">Otomobil</a></li>
+									<li><a href="">İnternet</a></li>
+									<li><a href="">Teknoloji</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /tags -->
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /section -->

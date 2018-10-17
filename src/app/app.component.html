@@ -1,132 +1,79 @@
+<app-header></app-header>
+
+<!-- <app-news-list></app-news-list> -->
+<router-outlet></router-outlet>
 
 
-    <div class="container">
-      <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-between align-items-center">
-          <!-- <div class="col-4 pt-1">
-            <a class="text-muted" href="#">Kaydol</a>
-          </div> -->
-          <div class="col-12 text-center">
-            <a class="blog-header-logo text-dark" href="#">HaberX</a>
+<!-- Footer -->
+<footer id="footer">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <div class="col-md-5">
+        <div class="footer-widget">
+          <div class="footer-logo">
+            <a href="" class="logo"><img src="./assets/img/logo.png" style="max-width:120px;" alt=""></a>
           </div>
-          <!-- <div class="col-4 d-flex justify-content-end align-items-center">
-            <a class="text-muted" href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
-            </a>
-            <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-          </div> -->
+          <ul class="footer-nav">
+            <li><a href="">Yazarlar</a></li>
+            <li><a href="">Künye</a></li>
+          </ul>
+          <div class="footer-copyright">
+            <span>© 
+            HaberX 2018 Türkiye'nin en hızlı haber sitesi</span>
+          </div>
         </div>
-      </header>
-
-      <div class="nav-scroller py-1 mb-2">
-        <nav class="nav d-flex justify-content-between">
-          <a class="p-2 text-muted" href="#" (click)="!!onCategoryClicked(1)">Gündem</a>
-          <a class="p-2 text-muted" href="#" (click)="!!onCategoryClicked(2)">Magazin</a>
-          <a class="p-2 text-muted" href="#" (click)="!!onCategoryClicked(3)">Siyaset</a>
-          <a class="p-2 text-muted" href="#" (click)="!!onCategoryClicked(4)">Spor</a>
-          <a class="p-2 text-muted" href="#" (click)="!!onCategoryClicked(5)">Ekonomi</a>
-          <a class="p-2 text-muted" href="#" (click)="!!onCategoryClicked(6)">Dünya</a>
-          <a class="p-2 text-muted" href="#"></a>
-          <a class="p-2 text-muted" href="#"></a>
-          <a class="p-2 text-muted" href="#"></a>
-          <a class="p-2 text-muted" href="#"></a>
-          <a class="p-2 text-muted" href="#"></a>
-          <a class="p-2 text-muted" href="#"></a>
-        </nav>
       </div>
 
-      <!-- <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-      </div> -->
-      
-      
-      
-      <!-- <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-        <div class="media">
-          <div class="media-body">
-            <h1 class="display-4 font-italic mt-2 mb-1"> newsList[0].title </h1>
-            <p class="lead my-3"> newsList[0].detail.description </p>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="footer-widget">
+              <h3 class="footer-title">Hakkımızda</h3>
+              <ul class="footer-links">
+                <li><a href="">Hakkımızda</a></li>
+                <li><a href="">İletişim</a></li>
+                
+              </ul>
+            </div>
           </div>
-          <img class="ml-3" src="" alt="">
+          <div class="col-md-6">
+            <div class="footer-widget">
+              <h3 class="footer-title">Kategoriler</h3>
+              <ul class="footer-links">
+                <li><a href="">Gündem</a></li>
+                <li><a href="">Magazin</a></li>
+                <li><a href="">Siyaset</a></li>
+                <li><a href="">Spor</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div> -->
-    
-    
-    <app-header></app-header>
- <!-- Button trigger modal -->
+      </div>
 
-
-<app-news-modal></app-news-modal>
-
-<app-news-list></app-news-list>
-
-
-
-
-
+      <div class="col-md-3">
+        <div class="footer-widget">
+          <h3 class="footer-title">Haber listemize kaydolun</h3>
+          <div class="footer-newsletter">
+            <form>
+              <input class="input" type="email" name="newsletter" placeholder="Emailiniz">
+              <button class="newsletter-btn"><i class="fa fa-paper-plane"></i></button>
+            </form>
+          </div>
+          <ul class="footer-social">
+            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+            <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+      </div>
 
     </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</footer>
 
-    <main role="main" class="container">
-      <div class="row">
-
-
-        <!-- <aside class="col-md-4 blog-sidebar">
-          <div class="p-3 mb-3 bg-light rounded">
-            <h4 class="font-italic">About</h4>
-            <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          </div>
-
-          <div class="p-3">
-            <h4 class="font-italic">Archives</h4>
-            <ol class="list-unstyled mb-0">
-              <li><a href="#">March 2014</a></li>
-              <li><a href="#">February 2014</a></li>
-              <li><a href="#">January 2014</a></li>
-              <li><a href="#">December 2013</a></li>
-              <li><a href="#">November 2013</a></li>
-              <li><a href="#">October 2013</a></li>
-              <li><a href="#">September 2013</a></li>
-              <li><a href="#">August 2013</a></li>
-              <li><a href="#">July 2013</a></li>
-              <li><a href="#">June 2013</a></li>
-              <li><a href="#">May 2013</a></li>
-              <li><a href="#">April 2013</a></li>
-            </ol>
-          </div>
-
-          <div class="p-3">
-            <h4 class="font-italic">Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ol>
-          </div>
-        </aside>/.blog-sidebar -->
-
-      </div><!-- /.row -->
-
-    </main><!-- /.container -->
-
-    <footer class="blog-footer">
-      <p><a href="http://haberxapp.com/">HaberX</a></p>
-      <p>
-        <!-- <a href="#">Back to top</a> -->
-      </p>
-    </footer>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-    <script>
-      Holder.addTheme('thumb', {
-        bg: '#55595c',
-        fg: '#eceeef',
-        text: 'Thumbnail'
-      });
-    </script> -->
+<!-- <app-news-modal></app-news-modal> -->
