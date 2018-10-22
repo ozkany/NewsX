@@ -11,7 +11,7 @@
         
         <div class="col-md-6">
           <div class="post post-thumb">
-            <a class="post-img" [routerLink]="['/haber', top2NewsData[0].detail.id]"><img src="{{ top2NewsData[0].imgurl }}" alt=""></a>
+            <a class="post-img" [routerLink]="['/haber', top2NewsData[0].detail.id]"><img src="{{ top2NewsData[0].detail.img.url }}" alt=""></a>
             <div class="post-body">
               <div class="post-meta">
                 <a class="post-category cat-2" [routerLink]="['/kaynak',top2NewsData[0].channel]">{{ top2NewsData[0].channel }}</a>
@@ -27,7 +27,7 @@
         <!-- post -->
         <div class="col-md-6">
           <div class="post post-thumb">
-            <a class="post-img" [routerLink]="['/haber', top2NewsData[1].detail.id]"><img src="{{ top2NewsData[1].imgurl }}" alt=""></a>
+            <a class="post-img" [routerLink]="['/haber', top2NewsData[1].detail.id]"><img src="{{ top2NewsData[1].detail.img.url }}" alt=""></a>
             <div class="post-body">
               <div class="post-meta">
                 <a class="post-category cat-3" [routerLink]="['/kaynak',top2NewsData[1].channel]">{{ top2NewsData[1].channel }}</a>
@@ -54,7 +54,7 @@
         <!-- post -->
         <div class="col-md-4">
           <div class="post">
-            <a class="post-img" [routerLink]="['/haber', recentNewsData[0].detail.id]"><img src="{{ recentNewsData[0].imgurl }}" alt=""></a>
+            <a class="post-img" [routerLink]="['/haber', recentNewsData[0].detail.id]"><img src="{{ recentNewsData[0].detail.img.url }}" alt=""></a>
             <div class="post-body">
               <div class="post-meta">
                 <a class="post-category cat-1" [routerLink]="['/kaynak',recentNewsData[0].channel]">{{ recentNewsData[0].channel }}</a>
@@ -69,7 +69,7 @@
         <!-- post -->
         <div class="col-md-4">
           <div class="post">
-            <a class="post-img" [routerLink]="['/haber', recentNewsData[1].detail.id]"><img src="{{ recentNewsData[1].imgurl }}" alt=""></a>
+            <a class="post-img" [routerLink]="['/haber', recentNewsData[1].detail.id]"><img src="{{ recentNewsData[1].detail.img.url }}" alt=""></a>
             <div class="post-body">
               <div class="post-meta">
                 <a class="post-category cat-2" [routerLink]="['/kaynak',recentNewsData[1].channel]">{{ recentNewsData[1].channel }}</a>
@@ -84,7 +84,7 @@
         <!-- post -->
         <div class="col-md-4">
           <div class="post">
-            <a class="post-img" [routerLink]="['/haber', recentNewsData[2].detail.id]"><img src="{{ recentNewsData[2].imgurl }}" alt=""></a>
+            <a class="post-img" [routerLink]="['/haber', recentNewsData[2].detail.id]"><img src="{{ recentNewsData[2].detail.img.url }}" alt=""></a>
             <div class="post-body">
               <div class="post-meta">
                 <a class="post-category cat-3" [routerLink]="['/kaynak',recentNewsData[2].channel]">{{ recentNewsData[2].channel }}</a>
@@ -101,7 +101,7 @@
         <!-- post -->
         <div class="col-md-4">
           <div class="post">
-            <a class="post-img" [routerLink]="['/haber', recentNewsData[3].detail.id]"><img src="{{ recentNewsData[3].imgurl }}" alt=""></a>
+            <a class="post-img" [routerLink]="['/haber', recentNewsData[3].detail.id]"><img src="{{ recentNewsData[3].detail.img.url }}" alt=""></a>
             <div class="post-body">
               <div class="post-meta">
                 <a class="post-category cat-2" [routerLink]="['/kaynak',recentNewsData[3].channel]">{{ recentNewsData[3].channel }}</a>
@@ -116,7 +116,7 @@
         <!-- post -->
         <div class="col-md-4">
           <div class="post">
-            <a class="post-img" [routerLink]="['/haber', recentNewsData[4].detail.id]"><img src="{{ recentNewsData[4].imgurl }}" alt=""></a>
+            <a class="post-img" [routerLink]="['/haber', recentNewsData[4].detail.id]"><img src="{{ recentNewsData[4].detail.img.url }}" alt=""></a>
             <div class="post-body">
               <div class="post-meta">
                 <a class="post-category cat-4" [routerLink]="['/kaynak',recentNewsData[4].channel]">{{ recentNewsData[4].channel }}</a>
@@ -131,7 +131,7 @@
         <!-- post -->
         <div class="col-md-4">
           <div class="post">
-            <a class="post-img" [routerLink]="['/haber', recentNewsData[5].detail.id]"><img src="{{ recentNewsData[5].imgurl }}" alt=""></a>
+            <a class="post-img" [routerLink]="['/haber', recentNewsData[5].detail.id]"><img src="{{ recentNewsData[5].detail.img.url }}" alt=""></a>
             <div class="post-body">
               <div class="post-meta">
                 <a class="post-category cat-1" [routerLink]="['/kaynak',recentNewsData[5].channel]">{{ recentNewsData[5].channel }}</a>
@@ -155,7 +155,7 @@
             <!-- post -->
             <div class="col-md-12">
               <div class="post post-thumb">
-                <a class="post-img" [routerLink]="['/haber', generalNewsData[0].detail.id]"><img src="{{ generalNewsData[0].imgurl }}" alt=""></a>
+                <a class="post-img" [routerLink]="['/haber', generalNewsData[0].detail.id]"><img src="{{ generalNewsData[0].detail.img.url }}" alt=""></a>
                 <div class="post-body">
                   <div class="post-meta">
                     <a class="post-category cat-3" [routerLink]="['/kaynak',generalNewsData[0].channel]">{{ generalNewsData[0].channel }}</a>
@@ -170,7 +170,7 @@
             <!-- post -->
             <div class="col-md-6">
               <div class="post">
-                <a class="post-img" [routerLink]="['/haber', generalNewsData[1].detail.id]"><img src="{{ generalNewsData[1].imgurl }}" alt=""></a>
+                <a class="post-img" [routerLink]="['/haber', generalNewsData[1].detail.id]"><img src="{{ generalNewsData[1].detail.img.url }}" alt=""></a>
                 <div class="post-body">
                   <div class="post-meta">
                     <a class="post-category cat-4" [routerLink]="['/kaynak',generalNewsData[1].channel]">{{ generalNewsData[1].channel }}</a>
@@ -185,7 +185,7 @@
             <!-- post -->
             <div class="col-md-6">
               <div class="post">
-                <a class="post-img" [routerLink]="['/haber', generalNewsData[2].detail.id]"><img src="{{ generalNewsData[2].imgurl }}" alt=""></a>
+                <a class="post-img" [routerLink]="['/haber', generalNewsData[2].detail.id]"><img src="{{ generalNewsData[2].detail.img.url }}" alt=""></a>
                 <div class="post-body">
                   <div class="post-meta">
                     <a class="post-category cat-1" [routerLink]="['/kaynak',generalNewsData[2].channel]">{{ generalNewsData[2].channel }}</a>
@@ -202,7 +202,7 @@
             <!-- post -->
             <div class="col-md-6">
               <div class="post">
-                <a class="post-img" [routerLink]="['/haber', generalNewsData[3].detail.id]"><img src="{{ generalNewsData[3].imgurl }}" alt=""></a>
+                <a class="post-img" [routerLink]="['/haber', generalNewsData[3].detail.id]"><img src="{{ generalNewsData[3].detail.img.url }}" alt=""></a>
                 <div class="post-body">
                   <div class="post-meta">
                     <a class="post-category cat-2" [routerLink]="['/kaynak',generalNewsData[3].channel]">{{ generalNewsData[3].channel }}</a>
@@ -217,7 +217,7 @@
             <!-- post -->
             <div class="col-md-6">
               <div class="post">
-                <a class="post-img" [routerLink]="['/haber', generalNewsData[4].detail.id]"><img src="{{ generalNewsData[4].imgurl }}" alt=""></a>
+                <a class="post-img" [routerLink]="['/haber', generalNewsData[4].detail.id]"><img src="{{ generalNewsData[4].detail.img.url }}" alt=""></a>
                 <div class="post-body">
                   <div class="post-meta">
                     <a class="post-category cat-3" [routerLink]="['/kaynak',generalNewsData[4].channel]">{{ generalNewsData[4].channel }}</a>
@@ -234,7 +234,7 @@
             <!-- post -->
             <div class="col-md-6">
               <div class="post">
-                <a class="post-img" [routerLink]="['/haber', generalNewsData[5].detail.id]"><img src="{{ generalNewsData[5].imgurl }}" alt=""></a>
+                <a class="post-img" [routerLink]="['/haber', generalNewsData[5].detail.id]"><img src="{{ generalNewsData[5].detail.img.url }}" alt=""></a>
                 <div class="post-body">
                   <div class="post-meta">
                     <a class="post-category cat-1" [routerLink]="['/kaynak',generalNewsData[5].channel]">{{ generalNewsData[5].channel }}</a>
@@ -249,7 +249,7 @@
             <!-- post -->
             <div class="col-md-6">
               <div class="post">
-                <a class="post-img" [routerLink]="['/haber', generalNewsData[6].detail.id]"><img src="{{ generalNewsData[6].imgurl }}" alt=""></a>
+                <a class="post-img" [routerLink]="['/haber', generalNewsData[6].detail.id]"><img src="{{ generalNewsData[6].detail.img.url }}" alt=""></a>
                 <div class="post-body">
                   <div class="post-meta">
                     <a class="post-category cat-2" [routerLink]="['/kaynak',generalNewsData[6].channel]">{{ generalNewsData[6].channel }}</a>
@@ -273,28 +273,28 @@
             </div>
 
             <div class="post post-widget">
-              <a class="post-img" [routerLink]="['/haber', mostReadNewsData[0].detail.id]"><img src="{{ mostReadNewsData[0].imgurl }}" alt=""></a>
+              <a class="post-img" [routerLink]="['/haber', mostReadNewsData[0].detail.id]"><img src="{{ mostReadNewsData[0].detail.img.url }}" alt=""></a>
               <div class="post-body">
                 <h3 class="post-title"><a [routerLink]="['/haber', mostReadNewsData[0].detail.id]">{{ mostReadNewsData[0].title }}</a></h3>
               </div>
             </div>
 
             <div class="post post-widget">
-              <a class="post-img" [routerLink]="['/haber', mostReadNewsData[1].detail.id]"><img src="{{ mostReadNewsData[1].imgurl }}" alt=""></a>
+              <a class="post-img" [routerLink]="['/haber', mostReadNewsData[1].detail.id]"><img src="{{ mostReadNewsData[1].detail.img.url }}" alt=""></a>
               <div class="post-body">
                 <h3 class="post-title"><a [routerLink]="['/haber', mostReadNewsData[1].detail.id]">{{ mostReadNewsData[1].title }}</a></h3>
               </div>
             </div>
 
             <div class="post post-widget">
-              <a class="post-img" [routerLink]="['/haber', mostReadNewsData[2].detail.id]"><img src="{{ mostReadNewsData[2].imgurl }}" alt=""></a>
+              <a class="post-img" [routerLink]="['/haber', mostReadNewsData[2].detail.id]"><img src="{{ mostReadNewsData[2].detail.img.url }}" alt=""></a>
               <div class="post-body">
                 <h3 class="post-title"><a [routerLink]="['/haber', mostReadNewsData[2].detail.id]">{{ mostReadNewsData[2].title }}</a></h3>
               </div>
             </div>
 
             <div class="post post-widget">
-              <a class="post-img" [routerLink]="['/haber', mostReadNewsData[3].detail.id]"><img src="{{ mostReadNewsData[3].imgurl }}" alt=""></a>
+              <a class="post-img" [routerLink]="['/haber', mostReadNewsData[3].detail.id]"><img src="{{ mostReadNewsData[3].detail.img.url }}" alt=""></a>
               <div class="post-body">
                 <h3 class="post-title"><a [routerLink]="['/haber', mostReadNewsData[3].detail.id]">{{ mostReadNewsData[3].title }}</a></h3>
               </div>
@@ -311,7 +311,7 @@
               <h2>Öne Çıkanlar</h2>
             </div>
             <div class="post post-thumb">
-              <a class="post-img" [routerLink]="['/haber', featuredNewsData[0].detail.id]"><img src="{{ featuredNewsData[0].imgurl }}" alt=""></a>
+              <a class="post-img" [routerLink]="['/haber', featuredNewsData[0].detail.id]"><img src="{{ featuredNewsData[0].detail.img.url }}" alt=""></a>
               <div class="post-body">
                 <div class="post-meta">
                   <a class="post-category cat-3" [routerLink]="['/kaynak',featuredNewsData[0].channel]">{{ featuredNewsData[0].channel }}</a>
@@ -322,7 +322,7 @@
             </div>
 
             <div class="post post-thumb">
-              <a class="post-img" [routerLink]="['/haber', featuredNewsData[1].detail.id]"><img src="{{ featuredNewsData[1].imgurl }}" alt=""></a>
+              <a class="post-img" [routerLink]="['/haber', featuredNewsData[1].detail.id]"><img src="{{ featuredNewsData[1].detail.img.url }}" alt=""></a>
               <div class="post-body">
                 <div class="post-meta">
                   <a class="post-category cat-2" [routerLink]="['/kaynak',featuredNewsData[1].channel]">{{ featuredNewsData[1].channel }}</a>
@@ -365,7 +365,7 @@
 					<!-- post -->
 					<div class="col-md-6">
 						<div class="post post-thumb">
-							<a class="post-img" [routerLink]="['/haber', bottom2NewsData[0].detail.id]"><img src="{{ bottom2NewsData[0].imgurl }}" alt=""></a>
+							<a class="post-img" [routerLink]="['/haber', bottom2NewsData[0].detail.id]"><img src="{{ bottom2NewsData[0].detail.img.url }}" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
 									<a class="post-category cat-2" [routerLink]="['/kaynak',bottom2NewsData[0].channel]">{{ bottom2NewsData[0].channel }}</a>
@@ -380,7 +380,7 @@
 					<!-- post -->
 					<div class="col-md-6">
 						<div class="post post-thumb">
-							<a class="post-img" [routerLink]="['/haber', bottom2NewsData[1].detail.id]"><img src="{{ bottom2NewsData[1].imgurl }}" alt=""></a>
+							<a class="post-img" [routerLink]="['/haber', bottom2NewsData[1].detail.id]"><img src="{{ bottom2NewsData[1].detail.img.url }}" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
 									<a class="post-category cat-3" [routerLink]="['/kaynak',bottom2NewsData[1].channel]">{{ bottom2NewsData[1].channel }}</a>
@@ -417,7 +417,7 @@
 					<!-- post -->
 					<div class="col-md-4">
 						<div class="post">
-							<a class="post-img" [routerLink]="['/haber', featuredBottomNewsData[0].detail.id]"><img src="{{ featuredBottomNewsData[0].imgurl }}" alt=""></a>
+							<a class="post-img" [routerLink]="['/haber', featuredBottomNewsData[0].detail.id]"><img src="{{ featuredBottomNewsData[0].detail.img.url }}" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
 									<a class="post-category cat-2" [routerLink]="['/kaynak',featuredBottomNewsData[0].channel]">{{ featuredBottomNewsData[0].channel }}</a>
@@ -432,7 +432,7 @@
 					<!-- post -->
 					<div class="col-md-4">
 						<div class="post">
-							<a class="post-img" [routerLink]="['/haber', featuredBottomNewsData[1].detail.id]"><img src="{{ featuredBottomNewsData[1].imgurl }}" alt=""></a>
+							<a class="post-img" [routerLink]="['/haber', featuredBottomNewsData[1].detail.id]"><img src="{{ featuredBottomNewsData[1].detail.img.url }}" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
 									<a class="post-category cat-3" [routerLink]="['/kaynak',featuredBottomNewsData[1].channel]">{{ featuredBottomNewsData[1].channel }}</a>
@@ -447,7 +447,7 @@
 					<!-- post -->
 					<div class="col-md-4">
 						<div class="post">
-							<a class="post-img" [routerLink]="['/haber', featuredBottomNewsData[2].detail.id]"><img src="{{ featuredBottomNewsData[2].imgurl }}" alt=""></a>
+							<a class="post-img" [routerLink]="['/haber', featuredBottomNewsData[2].detail.id]"><img src="{{ featuredBottomNewsData[2].detail.img.url }}" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
 									<a class="post-category cat-1" [routerLink]="['/kaynak',featuredBottomNewsData[2].channel]">{{ featuredBottomNewsData[2].channel }}</a>
@@ -485,7 +485,7 @@
 							<!-- post -->
 							<div class="col-md-12">
 								<div class="post post-row">
-									<a class="post-img" [routerLink]="['/haber', mostReadBottomNewsData[0].detail.id]"><img src="{{ mostReadBottomNewsData[0].imgurl }}" alt=""></a>
+									<a class="post-img" [routerLink]="['/haber', mostReadBottomNewsData[0].detail.id]"><img src="{{ mostReadBottomNewsData[0].detail.img.url }}" alt=""></a>
 									<div class="post-body">
 										<div class="post-meta">
 											<a class="post-category cat-2" [routerLink]="['/kaynak',mostReadBottomNewsData[0].channel]">{{ mostReadBottomNewsData[0].channel }}</a>
@@ -501,7 +501,7 @@
 							<!-- post -->
 							<div class="col-md-12">
 								<div class="post post-row">
-									<a class="post-img" [routerLink]="['/haber', mostReadBottomNewsData[1].detail.id]"><img src="{{ mostReadBottomNewsData[1].imgurl }}" alt=""></a>
+									<a class="post-img" [routerLink]="['/haber', mostReadBottomNewsData[1].detail.id]"><img src="{{ mostReadBottomNewsData[1].detail.img.url }}" alt=""></a>
 									<div class="post-body">
 										<div class="post-meta">
 											<a class="post-category cat-2" [routerLink]="['/kaynak',mostReadBottomNewsData[1].channel]">{{ mostReadBottomNewsData[1].channel }}</a>
@@ -517,7 +517,7 @@
 							<!-- post -->
 							<div class="col-md-12">
 								<div class="post post-row">
-									<a class="post-img" [routerLink]="['/haber', mostReadBottomNewsData[2].detail.id]"><img src="{{ mostReadBottomNewsData[2].imgurl }}" alt=""></a>
+									<a class="post-img" [routerLink]="['/haber', mostReadBottomNewsData[2].detail.id]"><img src="{{ mostReadBottomNewsData[2].detail.img.url }}" alt=""></a>
 									<div class="post-body">
 										<div class="post-meta">
 											<a class="post-category cat-4" [routerLink]="['/kaynak',mostReadBottomNewsData[2].channel]">{{ mostReadBottomNewsData[2].channel }}</a>
@@ -533,7 +533,7 @@
 							<!-- post -->
 							<div class="col-md-12">
 								<div class="post post-row">
-									<a class="post-img" [routerLink]="['/haber', mostReadBottomNewsData[3].detail.id]"><img src="{{ mostReadBottomNewsData[3].imgurl }}" alt=""></a>
+									<a class="post-img" [routerLink]="['/haber', mostReadBottomNewsData[3].detail.id]"><img src="{{ mostReadBottomNewsData[3].detail.img.url }}" alt=""></a>
 									<div class="post-body">
 										<div class="post-meta">
 											<a class="post-category cat-3" [routerLink]="['/kaynak',mostReadBottomNewsData[3].channel]">{{ mostReadBottomNewsData[3].channel }}</a>
