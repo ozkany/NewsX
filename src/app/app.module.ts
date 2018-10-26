@@ -9,11 +9,8 @@ import { NewsService } from './shared/news-service';
 import { HeaderComponent } from './header/header.component';
 import { NewsModalComponent } from './news-modal/news-modal.component';
 import { AsideComponent } from './aside/aside.component';
+import { AppRoutingModule } from './app-routing.module';
 
-const appRoutes: Routes = [
-  { path: '', component: NewsListComponent},
-  { path: 'haber/:id', component: NewsItemComponent }
-];
 
 @NgModule({
   declarations: [
@@ -26,7 +23,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes, {scrollPositionRestoration: 'enabled'})
+    AppRoutingModule
   ],
   providers: [NewsService],
   bootstrap: [AppComponent]

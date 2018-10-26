@@ -17,28 +17,28 @@
       </div>
 
       <div class="post post-widget">
-        <a class="post-img" [routerLink]="['/haber', mostReadNewsData[0].detail.id]"><img src="{{ mostReadNewsData[0].imgurl }}" alt=""></a>
+        <a class="post-img" [routerLink]="['/haber', mostReadNewsData[0].detail.id]"><img src="{{ mostReadNewsData[0].detail.img.url }}" alt=""></a>
         <div class="post-body">
           <h3 class="post-title"><a [routerLink]="['/haber', mostReadNewsData[0].detail.id]">{{ mostReadNewsData[0].title }}</a></h3>
         </div>
       </div>
 
       <div class="post post-widget">
-        <a class="post-img" [routerLink]="['/haber', mostReadNewsData[1].detail.id]"><img src="{{ mostReadNewsData[1].imgurl }}" alt=""></a>
+        <a class="post-img" [routerLink]="['/haber', mostReadNewsData[1].detail.id]"><img src="{{ mostReadNewsData[1].detail.img.url }}" alt=""></a>
         <div class="post-body">
           <h3 class="post-title"><a [routerLink]="['/haber', mostReadNewsData[1].detail.id]">{{ mostReadNewsData[1].title }}</a></h3>
         </div>
       </div>
 
       <div class="post post-widget">
-        <a class="post-img" [routerLink]="['/haber', mostReadNewsData[2].detail.id]"><img src="{{ mostReadNewsData[2].imgurl }}" alt=""></a>
+        <a class="post-img" [routerLink]="['/haber', mostReadNewsData[2].detail.id]"><img src="{{ mostReadNewsData[2].detail.img.url }}" alt=""></a>
         <div class="post-body">
           <h3 class="post-title"><a [routerLink]="['/haber', mostReadNewsData[2].detail.id]">{{ mostReadNewsData[2].title }}</a></h3>
         </div>
       </div>
 
       <div class="post post-widget">
-        <a class="post-img" [routerLink]="['/haber', mostReadNewsData[3].detail.id]"><img src="{{ mostReadNewsData[3].imgurl }}" alt=""></a>
+        <a class="post-img" [routerLink]="['/haber', mostReadNewsData[3].detail.id]"><img src="{{ mostReadNewsData[3].detail.img.url }}" alt=""></a>
         <div class="post-body">
           <h3 class="post-title"><a [routerLink]="['/haber', mostReadNewsData[3].detail.id]">{{ mostReadNewsData[3].title }}</a></h3>
         </div>
@@ -52,7 +52,7 @@
         <h2>Öne Çıkanlar</h2>
       </div>
       <div class="post post-thumb">
-        <a class="post-img" [routerLink]="['/haber', featuredNewsData[0].detail.id]"><img src="{{ featuredNewsData[0].imgurl }}" alt=""></a>
+        <a class="post-img" [routerLink]="['/haber', featuredNewsData[0].detail.id]"><img src="{{ featuredNewsData[0].detail.img.url }}" alt=""></a>
         <div class="post-body">
           <div class="post-meta">
             <a class="post-category cat-3" [routerLink]="['/haber', featuredNewsData[0].detail.id]">{{ featuredNewsData[0].channel }}</a>
@@ -63,7 +63,7 @@
       </div>
 
       <div class="post post-thumb">
-        <a class="post-img" [routerLink]="['/haber', featuredNewsData[1].detail.id]"><img src="{{ featuredNewsData[1].imgurl }}" alt=""></a>
+        <a class="post-img" [routerLink]="['/haber', featuredNewsData[1].detail.id]"><img src="{{ featuredNewsData[1].detail.img.url }}" alt=""></a>
         <div class="post-body">
           <div class="post-meta">
             <a class="post-category cat-2" [routerLink]="['/haber', featuredNewsData[1].detail.id]">{{ featuredNewsData[1].channel }}</a>
