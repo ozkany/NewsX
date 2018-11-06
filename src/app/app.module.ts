@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { NewsModalComponent } from './news-modal/news-modal.component';
 import { AsideComponent } from './aside/aside.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     NewsListComponent,
     HeaderComponent,
     NewsModalComponent,
-    AsideComponent
+    AsideComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
