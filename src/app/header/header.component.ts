@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onCategoryClicked(categoryId: number) {
-    console.log('header-onCategoryClicked-' + categoryId);
+    console.log('header -> onCategoryClicked : ' + categoryId);
     this.newsService.newsCategoryChanged.emit(categoryId);
   }
 

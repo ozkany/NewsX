@@ -1,9 +1,16 @@
 import * as products from './news.json';
+import * as newsCat1 from './newsCat1.json';
+import * as newsCat2 from './newsCat2.json';
+import * as newsCat3 from './newsCat3.json';
+import * as newsCat4 from './newsCat4.json';
+import * as newsCat5 from './newsCat5.json';
+import * as newsCat6 from './newsCat6.json';
 import { NewsItem } from './news.model';
 import { EventEmitter } from '@angular/core';
 
 
 export class NewsService {
+    newsListArray: [[NewsItem]];
     newsList: [NewsItem];
     selectedNewsList: NewsItem[] = [];
     categoryId: number = 0;
@@ -14,29 +21,35 @@ export class NewsService {
 
     constructor() {
         this.newsList = <[NewsItem]>products.default;
+
+        this.newsListArray = [<[NewsItem]>newsCat1.default];
+        this.newsListArray.push(<[NewsItem]>newsCat2.default);
+        this.newsListArray.push(<[NewsItem]>newsCat3.default);
+        this.newsListArray.push(<[NewsItem]>newsCat4.default);
+        this.newsListArray.push(<[NewsItem]>newsCat5.default);
+        this.newsListArray.push(<[NewsItem]>newsCat6.default);
+        
+        console.log(this.newsListArray);
     }
 
     get NewsList() {
-        if(this.categoryId == 0) {
-            return this.newsList;
-        } else { 
-            return this.newsList.filter(n=> n.category == this.categoryId);
-        }
+        return this.newsListArray[this.categoryId];
+        // if(this.categoryId == 0) {
+        //     return this.newsList;
+        // } else { 
+        //     return this.newsList.filter(n=> n.category == this.categoryId);
+        // }
     }
     
     getNewsListData() {
-        console.log('getNewsListData in NewsService');
-        console.log(this.newsList);
         return this.newsList.slice();
     }
 
     getNewsById(id: string) {
-        console.log('getNewsById in NewsService');
-        return this.newsList.filter(n=> n.detail.id == id)[0];
+        return this.NewsList.filter(n=> n.detail.id == id)[0];
     }
 
     getTop2NewsData() {
-        console.log("getTop2NewsData. categoryId="+this.categoryId);
         return this.NewsList.slice(0, 2);
     }
 
@@ -69,9 +82,7 @@ export class NewsService {
     }
 
 
-
     setNewSelectedNews(newsItem: NewsItem) {
-        console.log('setNewSelectedNews in NewsService');
         this.selectedNewsList.push(newsItem);
         this.selectedNewsListChanged.emit(this.selectedNewsList.slice());
     }

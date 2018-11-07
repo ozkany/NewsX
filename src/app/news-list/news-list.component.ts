@@ -23,7 +23,6 @@ export class NewsListComponent implements OnInit {
   }
 
   onNewsSelected(selectedNews: NewsItem) {
-    console.log(selectedNews);
     this.newsService.newsSelected.emit(selectedNews);
   }
 
@@ -43,7 +42,6 @@ export class NewsListComponent implements OnInit {
         console.log('root.newsCategoryChanged.subscribe : ' + categoryId);
         this.newsService.categoryId = categoryId;
         this.getAllNewsData();
-        console.log(this.top2NewsData);
     });
   }
 
